@@ -44,7 +44,7 @@ int main()
             fscanf(file, "%[^\t^\n]s", str);
             printf("str:: %s\n",str);
             c = fgetc(file);
-            getchar();
+            // getchar();
             if ( (c == '\n') || (c == '\r') || (c == '\0')) 
             {
                 // printf("GOTCHA!!\n");
@@ -98,15 +98,17 @@ int main()
     {
         while (fim2 < COLUNAS)
         {
-            while(matrix[fim][fim2][fim3] != '\0')
-            { 
-                // printf("aqui\n");
-                printf("matrix[%d][%d][%d] = %c", fim, fim2, fim3, matrix[fim][fim2][fim3]);
-                printf("\n");
-                fim3++;
-            }
-            printf("\n");
-            fim3 = 0; 
+            // while(matrix[fim][fim2][fim3] != '\0')
+            // { 
+            //     // printf("aqui\n");
+            //     printf("matrix[%d][%d][%d] = %c", fim, fim2, fim3, matrix[fim][fim2][fim3]);
+            //     printf("\n");
+            //     fim3++;
+            // }
+            // printf("\n");
+            // fim3 = 0; 
+            printf("%s\n", matrix[fim][fim2]);
+            
             fim2++;
         }
         fim2 = 0;
