@@ -1,0 +1,48 @@
+ -> Trocar os  NUL por NA                               // abreviação para -> Não se Aplica
+ -> Saber a quantidade de linhas de cada arquivo        // não sei se pode variar
+        Nota: Mudou. Read -> Write. 
+ -> Número de Colunas Fixas: 21, sendo elas separadas assim:
+
+00        Código Órgão Superior       <PK>
+01        Nome Órgão Superior
+
+02        Código Órgão Subordinado    <PK>
+03        Nome Órgão Subordinado
+00        Código Órgão Superior       <PK><FK>
+
+04        Código Unidade Gestora      <PK>
+05        Nome Unidade Gestora
+02        Código Órgão Subordinado    <PK><FK>
+        
+06        Código Função               <PK>
+07        Nome Função
+04        Código Unidade Gestora      <PK><FK>
+        
+08        Código Subfunção            <PK>
+09        Nome Subfunção
+06        Código Função               <PK><FK>
+
+        
+10        Código Programa             <PK>
+11        Nome Programa
+08        Código Subfunção            <PK><FK>
+        
+
+12        Código Ação                 <PK>
+13        Nome Ação
+14        Linguagem Cidadã
+10        Código Programa             <PK><FK>
+        
+15        CPF Favorecido              
+16        Nome Favorecido             
+??        ID Favorecido               <PK>       
+        
+17        Documento Pagamento         <PK>
+18        Gestão Pagamento            
+19        Data Pagamento       
+20        Valor Pagamento
+??        ID Favorecido              <PK><FK>
+
+        
+12        Código Ação                 <FK>
+??        ID Favorecido               <PK>       

@@ -10,7 +10,7 @@
 int main()
 {
     setlocale(LC_ALL, "");
-    char matrix[10][10][30];
+    char matrix[330][50][500];
     // char word[10] = "amor";
     char str[999];
     FILE * file;
@@ -19,6 +19,7 @@ int main()
     int c = 0;
     int COLUNAS = 0;
     int size = 0;
+    char arquivo[100] = "201101_Diarias.csv";
 
     // for (i = 0; i < 0xffff; i++) {
     //             printf("%x - %lc\n", i, i);
@@ -37,8 +38,12 @@ int main()
  //        printf("%c",matrix[0][i]);
  //        i++;
  //    }
-    file = fopen( "une2.cvs" , "r");
+
+    file = fopen( arquivo , "r");
     if (file) {
+            
+        //Jump The First Line
+        fscanf(file, "%[\n]s", str);
         do {
             
             fscanf(file, "%[^\t^\n]s", str);
@@ -59,7 +64,7 @@ int main()
                 matrix[i][j][size] = '\n';
                 printf("%s\n", matrix[i][j]);
                 printf("---------------BOTEI FIM DE LINHA \n" );
-                getchar();
+                // getchar();
                 size = 0;
                 i++;
                 COLUNAS = j;
@@ -82,7 +87,7 @@ int main()
                 matrix[i][j][size] = '\0';
                 printf("%s\n", matrix[i][j]);
                 printf("BOTEI FIM DE PALAVRA \n");
-                getchar();
+                // getchar();
                 size = 0;
                 j++;
             // getchar();
